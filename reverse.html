@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reversed Sentence</title>
+</head>
+<body>
+  <h1>Original Sentence</h1>
+  <p id="originalSentence">This is a sunny day</p>
+
+  <h1>Reversed Sentence</h1>
+  <p id="reversedSentence"></p>
+
+  <script>
+    const sentence = document.getElementById("originalSentence").innerHTML;
+    const words = sentence.split(" ");
+    const reversedWords = words.map((word) => word.split("").reverse().join(""));
+    const reversedSentence = reversedWords.join(" ");
+
+    document.getElementById("reversedSentence").innerHTML = reversedSentence;
+  </script>
+</body>
+</html>

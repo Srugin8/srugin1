@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Survey Form</title>
+    <script>
+        function submitForm() {
+            
+            var name = document.getElementById("name").value;
+            
+            
+            var firstTime = document.querySelector('input[name="first_time"]:checked').value;
+            var recommend = document.querySelector('input[name="recommend"]:checked').value;
+            var satisfaction = document.querySelector('input[name="satisfaction"]:checked').value;
+            var suggestions = document.getElementById("suggestions").value;
+            
+            var message = "Thank you, " + name + "!\n\n";
+            message += "Your responses:\n";
+            message += "Is this your first time using our products & services? " + firstTime + "\n";
+            message += "Would you recommend us to your friends and colleagues? " + recommend + "\n";
+            message += "How satisfied are you with our company overall? " + satisfaction + "\n";
+            message += "Suggestions to improve our service: " + suggestions + "\n\n";
+            message += "Have a great day!";
+            
+            alert(message);
+        }
+    </script>
+    <style>
+        form{
+            border: 1px solid black;
+            width: 500px;
+            margin-left: 500px;
+            padding-left: 100px;
+            background-color: aliceblue;
+            
+        }
+        body{
+            background-color: aqua;
+        }
+        h1{
+            text-align: center;
+           
+        }
+       .button{
+        background-color:rgb(66, 66, 174);
+        color: white;
+       }
+    </style>
+</head>
+
+
+
+
+
+<body>
+    
+    
+    <form>
+        <h1 > Customer Survey</h1>
+        <p>Name:</p>
+        <input type="text" id="name">
+        <p>Email</p>
+        <input  type="email" id="Email">
+        <p>Is this  first time you are using our products & services?</p>
+        <input type="radio" name="first_time" value="Yes"> Yes
+        <input type="radio" name="first_time" value="No"> No
+        <br>
+        
+        <p>Would you suggestion to your friends and colleagues?</p>
+        <input type="radio" name="recommend" value="Yes"> Yes
+        <input type="radio" name="recommend" value="No"> No
+        <br>
+        
+        <p>How satisfied are you with our company overall?</p>
+        <input type="radio" name="satisfaction" value="Satisfied"> Satisfied
+        <input type="radio" name="satisfaction" value="Undecided"> Undecided
+        <input type="radio" name="satisfaction" value="Unsatisfied"> Unsatisfied
+        <br>
+        
+        <p>Do you have any suggestions to improve our service?</p>
+        <textarea id="suggestions" rows="4" cols="50"></textarea>
+        <br>
+        
+        
+        <br>
+        
+        <input  class="button"      type="button" value="Submit" onclick="submitForm()">
+    </form>
+</body>
+</html>
